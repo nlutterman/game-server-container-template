@@ -10,14 +10,32 @@ This repo is a template used by me to set up each new game. Each server's contai
 
 <table>
 	<thead>
-		<tr><th>Game Repository</th>                                                      <th>Game Official Website</th></tr>
+		<tr>
+			<th>Game Repository</th>
+			<th>Game Official Website</th>
+		</tr>
 	</thead>
 	<tbody>
-		<tr><th>[Project Zomboid](https://gitlab.com/game-server-containers/project-zomboid.git)</th> <th><https://projectzomboid.com/blog/></th></tr>
-		<tr><th>[Core Keeper](https://gitlab.com/game-server-containers/core-keeper.git)</th>         <th><https://fireshinegames.co.uk/games/core-keeper/>/th></tr>
-		<tr><th>[Valheim](https://gitlab.com/game-server-containers/valheim.git)</th>                 <th><https://www.valheimgame.com/></th></tr>
-		<tr><th>[Stationers](https://gitlab.com/game-server-containers/stationers.git)</th>           <th><https://www.stationeers.com/></th></tr>
-		<tr><th>[Eco](https://gitlab.com/game-server-containers/eco.git)</th>                         <th><https://play.eco/></th></tr>
+		<tr>
+			<th>[Project Zomboid](https://gitlab.com/game-server-containers/project-zomboid.git)</th>
+			<th>https://projectzomboid.com/blog/</th>
+		</tr>
+		<tr>
+			<th>[Core Keeper](https://gitlab.com/game-server-containers/core-keeper.git)</th>
+			<th>https://fireshinegames.co.uk/games/core-keeper//th>
+		</tr>
+		<tr>
+			<th>[Valheim](https://gitlab.com/game-server-containers/valheim.git)</th>
+			<th>https://www.valheimgame.com/</th>
+		</tr>
+		<tr>
+			<th>[Stationers](https://gitlab.com/game-server-containers/stationers.git)</th>
+			<th>https://www.stationeers.com/</th>
+		</tr>
+		<tr>
+			<th>[Eco](https://gitlab.com/game-server-containers/eco.git)</th>
+			<th>https://play.eco/</th>
+		</tr>
 	</tbody>
 </table>
 
