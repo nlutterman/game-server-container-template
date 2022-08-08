@@ -1,0 +1,68 @@
+FROM fedora:latest
+
+LABEL maintainer="nathan@blutterman.com"
+
+ARG STEAMCMDDIR="/home/steam/steamcmd"
+ARG USER="steam"
+
+ENV STEAMCMDDIR=$STEAMCMDDIR
+ENV USER=$USER
+
+USER root
+
+RUN set -x \
+	&& dnf upgrade -y --refresh \
+	&& dnf install -y \
+		glibc-locale-source \
+		glibc-langpack-en \
+		systemd \
+		curl \
+		libcurl \
+		wget \
+		file \
+		tar \
+		bzip2 \
+		bzip2-libs \
+		gzip \
+		zip \
+		unzip \
+		util-linux \
+		ca-certificates \
+		libstdc++.x86_64 \
+		libstdc++.i686 \
+		libstdc++-devel.x86_64 \
+		libstdc++-devel.i686 \
+		libcurl-minimal \
+		python3 \
+		python3-pkg* \
+		neovim \
+		procps-ng \
+		sqlite \
+		rng-tools \
+		xorg-x11-server-Xvfb \
+		alternatives \
+	&& dnf remove -y "vi*" \
+	&& dnf autoremove -y
+
+ENV LANG="en_US.UTF-8"
+ENV LANG_REGION="en_US"
+ENV LANG_ENCODING="UTF-8"
+RUN localedef --force -i "$LANG_REGION" -f "$LANG_ENCODING" "$LANG"
+
+RUN update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 100 --slave /usr/share/man/man1/vim.1.gz vim.1.gz /usr/share/man/man1/nvim.1.gz
+RUN update-alternatives --install /usr/bin/vi  vi  /usr/bin/vim  100 --slave /usr/share/man/man1/vi.1.gz  vi.1.gz  /usr/share/man/man1/vim.1.gz
+
+RUN useradd --create-home --shell /bin/bash "$USER"
+
+USER "$USER"
+
+RUN mkdir --parents "$STEAMCMDDIR"
+
+WORKDIR "${STEAMCMDDIR}"
+
+RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+RUN chown -R steam:steam "$STEAMCMDDIR"
+
+RUN chmod +x "${STEAMCMDDIR}/steamcmd.sh"
+
+
