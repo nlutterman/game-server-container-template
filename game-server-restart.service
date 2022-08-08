@@ -1,0 +1,9 @@
+[Unit]
+Description=Restart %i server
+Requires=%i.service
+
+[Service]
+Type=oneshot
+Environment=CK_SERVER_RESTART_COUNTDOWN=10
+ExecStartPre=-/usr/bin/zsh /home/serverhost/%i/begin-restart-countdown.zsh
+ExecStart=/usr/bin/systemctl restart %i.service

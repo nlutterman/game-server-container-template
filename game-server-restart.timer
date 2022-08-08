@@ -1,0 +1,6 @@
+[Timer]
+Unit=%i-restart.service
+OnCalendar=00:00 US/Central
+
+[Install]
+WantedBy=timers.target

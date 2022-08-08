@@ -1,0 +1,15 @@
+[Unit]
+Description=Game Server
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=/path/to/pre-start-systemd-service.zsh
+ExecStart=/path/to/start-systemd-service.zsh
+ExecStop=/path/to/stop-systemd-service.zsh
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
