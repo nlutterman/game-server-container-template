@@ -22,7 +22,7 @@ This repo is a template used by me to set up each new game. Each server's contai
 		</tr>
 		<tr>
 			<th>[Core Keeper](https://gitlab.com/game-server-containers/core-keeper.git)</th>
-			<th>https://fireshinegames.co.uk/games/core-keeper//th>
+			<th>https://fireshinegames.co.uk/games/core-keeper/</th>
 		</tr>
 		<tr>
 			<th>[Valheim](https://gitlab.com/game-server-containers/valheim.git)</th>
